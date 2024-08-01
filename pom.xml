@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>Gestion tickets</artifactId>
+	<artifactId>systemeGestionTickets</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Gestion tickets</name>
+	<name>systemeGestionTickets</name>
 	<description>système de gestion de tickets</description>
 	<url/>
 	<licenses>
@@ -48,6 +48,16 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 
