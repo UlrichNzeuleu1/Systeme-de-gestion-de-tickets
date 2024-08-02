@@ -6,7 +6,7 @@ import org.springframework.util.StringUtils;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TicketValidateur {
+public class TicketValidator {
 
     public static List<String> validate (TicketDto ticketDto) {
 

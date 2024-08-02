@@ -10,15 +10,15 @@ import java.util.List;
 
 @Data
 @Entity
-public class Utilisateur {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String nomUtilisateur;
+    private String username;
 
     private String email;
 
-    private List<Ticket> ticketsAssignes;
+    private List<Ticket> assignedTickets;
 }

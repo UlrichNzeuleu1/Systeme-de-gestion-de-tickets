@@ -19,7 +19,7 @@ public class Ticket {
     private String description;
 
     @ManyToOne
-    private Utilisateur utilisateurAssigne;
+    private User AssignedUser;
 
-    private  StatusTicket statut;
+    private  TicketStatus statut;
 }

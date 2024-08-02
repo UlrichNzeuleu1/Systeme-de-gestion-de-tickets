@@ -1,6 +1,6 @@
 package com.example.systemeGestionTickets.model;
 
-public enum StatusTicket {
+public enum TicketStatus {
 
     EN_COURS,
     TERMINE,

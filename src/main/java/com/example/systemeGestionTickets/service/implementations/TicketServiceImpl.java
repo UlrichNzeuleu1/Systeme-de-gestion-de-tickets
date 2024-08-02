@@ -1,10 +1,12 @@
 package com.example.systemeGestionTickets.service.implementations;
 
 import com.example.systemeGestionTickets.dto.TicketDto;
+import com.example.systemeGestionTickets.dto.UserDto;
 import com.example.systemeGestionTickets.exception.EntityNotFoundException;
 import com.example.systemeGestionTickets.exception.ErrorCodes;
 import com.example.systemeGestionTickets.exception.InvalidEntityException;
 import com.example.systemeGestionTickets.repository.TicketRepository;
+import com.example.systemeGestionTickets.repository.UserRepository;
 import com.example.systemeGestionTickets.service.interfaces.TicketService;
 import com.example.systemeGestionTickets.validateur.TicketValidator;
 import lombok.extern.slf4j.Slf4j;
@@ -19,11 +21,13 @@ import java.util.stream.Collectors;
 
 public class TicketServiceImpl implements TicketService {
 
-    private TicketRepository ticketRepository;
+    private final TicketRepository ticketRepository;
+    private final UserRepository userRepository;
 
     @Autowired
-    public TicketServiceImpl(TicketRepository ticketRepository) {
+    public TicketServiceImpl(TicketRepository ticketRepository, UserRepository userRepository) {
         this.ticketRepository = ticketRepository;
+        this.userRepository = userRepository;
     }
 
     @Override
@@ -65,8 +69,14 @@ public class TicketServiceImpl implements TicketService {
     }
 
     @Override
-    public TicketDto update(TicketDto dto) {
-        return null;
+    public TicketDto updateTicket(Long id, TicketDto updatedTicket) {
+
+        TicketDto ticketDto = TicketDto.fromEntity(findById(id));
+        ticketDto.setTitle(updatedTicket.getTitle());
+        ticketDto.setDescription(updatedTicket.getDescription());
+        ticketDto.setStatus(updatedTicket.getStatus());
+        ticketDto.setAssignedUser(updatedTicket.getAssignedUser());
+        return ticketRepository.save(ticketDto);
     }
 
     @Override
@@ -76,5 +86,16 @@ public class TicketServiceImpl implements TicketService {
             log.error("Ticket ID is null");
         }
         ticketRepository.deleteById(id);
+    }
+
+    @Override
+    public TicketDto assignTicketToUser(Long ticketId, Long userId) {
+            TicketDto ticketDto = findById(ticketId);
+            UserDto userDto = (UserDto) userRepository.findById(ticketId)
+                    .orElseThrow(() -> new EntityNotFoundException("Aucun utilisateur ne correstpond a cette id fournit ",ErrorCodes.USER_NOT_FOUND));
+            ticketDto.setAssignedUser(userDto);
+            ticketRepository.save(ticketDto);
+
+        return ticketDto;
     }
 }

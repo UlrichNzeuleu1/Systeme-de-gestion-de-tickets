@@ -10,7 +10,7 @@ import java.util.List;
 @Builder
 @Data
 
-public class UserDto {
+public class UserDto extends User{
 
     private Long id;
 

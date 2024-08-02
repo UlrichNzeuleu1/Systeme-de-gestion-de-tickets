@@ -17,7 +17,6 @@ import java.util.stream.Collectors;
 
 @Service
 @Slf4j
-
 public class UserServiceImpl implements UserService {
 
     private UserRepository userRepository;
@@ -64,8 +63,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserDto update(UserDto dto) {
-        return null;
+    public UserDto updateUser(Long id, UserDto updatedUser) {
+        UserDto userDto = findById(id);
+        userDto.setUsername(updatedUser.getUsername());
+        userDto.setEmail(updatedUser.getEmail());
+        return userRepository.save(userDto);
     }
 
     @Override

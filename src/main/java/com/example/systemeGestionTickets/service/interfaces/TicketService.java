@@ -7,10 +7,14 @@ import java.util.List;
 public interface TicketService {
 
         TicketDto create(TicketDto dto);
+
         TicketDto findById(Long id);
+
         List<TicketDto> findAll();
-        TicketDto update(TicketDto dto);
+
+        TicketDto updateTicket(Long id, TicketDto updatedTicket);
+
         void delete(Long id);
 
-
+        TicketDto assignTicketToUser(Long ticketId, Long userId);
 }

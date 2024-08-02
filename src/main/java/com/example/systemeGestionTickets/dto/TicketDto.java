@@ -1,19 +1,15 @@
 package com.example.systemeGestionTickets.dto;
 
-import com.example.systemeGestionTickets.model.StatusTicket;
+import com.example.systemeGestionTickets.model.TicketStatus;
 import com.example.systemeGestionTickets.model.Ticket;
-import com.example.systemeGestionTickets.model.Utilisateur;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import com.example.systemeGestionTickets.model.User;
 import lombok.Builder;
 import lombok.Data;
 
 @Data
 @Builder
 
-public class TicketDto {
+public class TicketDto extends Ticket {
 
     private Long id;
 
@@ -21,9 +17,9 @@ public class TicketDto {
 
     private String description;
 
-    private Utilisateur utilisateurAssigne;
+    private User AssignedUser;
 
-    private StatusTicket statut;
+    private TicketStatus status;
 
 
     //Ici nous allons faire un mapping du Dto vers l'Entite
