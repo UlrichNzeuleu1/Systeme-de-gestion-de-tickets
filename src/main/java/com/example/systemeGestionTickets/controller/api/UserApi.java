@@ -2,7 +2,6 @@ package com.example.systemeGestionTickets.controller.api;
 
 import com.example.systemeGestionTickets.dto.TicketDto;
 import com.example.systemeGestionTickets.dto.UserDto;
-import com.example.systemeGestionTickets.model.Ticket;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
