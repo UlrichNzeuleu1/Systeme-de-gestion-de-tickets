@@ -13,7 +13,7 @@
 //
 //public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //
-//    @Override
+//
 //    protected void configure(HttpSecurity http) throws Exception {
 //        http
 //            .csrf().disable()
@@ -30,7 +30,7 @@
 //        return new BCryptPasswordEncoder();
 //    }
 //
-//    @Override
+//
 //    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 //        auth.inMemoryAuthentication()
 //            .withUser("user")

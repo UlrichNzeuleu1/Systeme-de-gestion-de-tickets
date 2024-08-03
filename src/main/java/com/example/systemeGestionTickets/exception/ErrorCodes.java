@@ -1,7 +1,5 @@
 package com.example.systemeGestionTickets.exception;
 
-import java.util.Enumeration;
-
 public enum ErrorCodes {
 
         TICKET_NOT_FOUND(1000),

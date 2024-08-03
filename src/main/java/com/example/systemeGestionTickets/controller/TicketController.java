@@ -2,7 +2,6 @@ package com.example.systemeGestionTickets.controller;
 
 import com.example.systemeGestionTickets.controller.api.TicketApi;
 import com.example.systemeGestionTickets.dto.TicketDto;
-import com.example.systemeGestionTickets.dto.UserDto;
 import com.example.systemeGestionTickets.service.interfaces.TicketService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
