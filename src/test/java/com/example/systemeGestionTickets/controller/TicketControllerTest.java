@@ -58,27 +58,9 @@ public class TicketControllerTest {
                 .andExpect((ResultMatcher) jsonPath("$[1].title", is("Test Ticket 2")));
     }
 
-    @org.junit.jupiter.api.Test
-    void findAll() {
-    }
+   
 
-    @org.junit.jupiter.api.Test
+    @Test
     void getTicketById() {
-    }
-
-    @Test
-    public void createTicket() {
-    }
-
-    @Test
-    public void updateTicket() {
-    }
-
-    @Test
-    public void assignTicketToUser() {
-    }
-
-    @Test
-    public void delete() {
     }
 }
